@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HellDesignCustoms Paid Download</title>
+<style>
+body {
+    background: #111;
+    color: #fff;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 80px;
+}
+input {
+    padding: 10px;
+    font-size: 18px;
+    width: 250px;
+    border-radius: 6px;
+    border: none;
+}
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #00aaff;
+    color: #fff;
+    cursor: pointer;
+}
+#downloadSection {
+    display: none;
+    margin-top: 40px;
+}
+a.download-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>Enter Your Access Code</h1>
+<p>This code was provided after your payment.</p>
+
+<input type="text" id="codeInput" placeholder="Enter access code">
+<button onclick="checkCode()">Unlock Download</button>
+
+<div id="downloadSection">
+    <h2>Download Your File</h2>
+    <a class="download-btn" href="Outlaw_Truck_and_Trailer_skin.zip" download>Download Now</a>
+</div>
+
+<script>
+// Generate a daily access code based on today's date
+function generateDailyCode() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1; // 1-12
+    const day = today.getDate(); // 1-31
+
+    // Create a unique daily code (example: 20260728 → 728)
+    const rawCode = `${year}${month}${day}`;
+
+    // Convert to a 4-digit code by hashing the date
+    let hash = 0;
+    for (let i = 0; i < rawCode.length; i++) {
+        hash = (hash * 31 + rawCode.charCodeAt(i)) % 10000;
+    }
+
+    // Ensure it's always 4 digits
+    return hash.toString().padStart(4, "0");
+}
+
+const correctCode = generateDailyCode();
+
+// Show the code in the console so YOU can see it
+console.log("Today's access code:", correctCode);
+
+// Check user input
+function checkCode() {
+    const userCode = document.getElementById("codeInput").value;
+
+    if (userCode === correctCode) {
+        document.getElementById("downloadSection").style.display = "block";
+    } else {
+        alert("Invalid code. Please check your payment confirmation.");
+    }
+}
+</script>
+
+
+</body>
+</html>
 
