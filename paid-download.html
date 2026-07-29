@@ -1,58 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HellDesignCustoms Paid Download</title>
+<title>HellDesignCustoms | Paid Download</title>
+
 <style>
-body {
-    background: #111;
-    color: #fff;
-    font-family: Arial;
-    text-align: center;
-    padding-top: 80px;
-}
-input {
-    padding: 10px;
-    font-size: 18px;
-    width: 250px;
-    border-radius: 6px;
-    border: none;
-}
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    margin-top: 10px;
-    border-radius: 6px;
-    border: none;
-    background: #00aaff;
-    color: #fff;
-    cursor: pointer;
-}
-#downloadSection {
-    display: none;
-    margin-top: 40px;
-}
-a.download-btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #28a745;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 20px;
-}
+    body {
+        background: #0d0d0d;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    h1 {
+        font-size: 42px;
+        color: #ff1a1a;
+        text-shadow: 0 0 15px #ff1a1a;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #ccc;
+    }
+
+    input {
+        padding: 12px;
+        font-size: 20px;
+        width: 260px;
+        border-radius: 6px;
+        border: 2px solid #ff1a1a;
+        background: #1a1a1a;
+        color: #fff;
+        outline: none;
+        text-align: center;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 20px;
+        margin-top: 15px;
+        border-radius: 6px;
+        border: none;
+        background: #ff1a1a;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 0 0 10px #ff1a1a;
+    }
+
+    button:hover {
+        background: #cc0000;
+        box-shadow: 0 0 20px #ff1a1a;
+    }
+
+    #downloadSection {
+        display: none;
+        margin-top: 50px;
+    }
+
+    a.download-btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #00cc44;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 22px;
+        box-shadow: 0 0 15px #00cc44;
+        transition: 0.2s;
+    }
+
+    a.download-btn:hover {
+        background: #009933;
+        box-shadow: 0 0 25px #00cc44;
+    }
+
+    .logo {
+        width: 180px;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 0 10px #ff1a1a);
+    }
 </style>
 </head>
+
 <body>
 
-<h1>Enter Your Access Code</h1>
-<p>This code was provided after your payment.</p>
+<img class="logo" src="images/logo.png" alt="HellDesignCustoms Logo">
+
+<h1>Secure Paid Download</h1>
+<p>Enter the access code you received after payment.</p>
 
 <input type="text" id="codeInput" placeholder="Enter access code">
+<br>
 <button onclick="checkCode()">Unlock Download</button>
 
 <div id="downloadSection">
-    <h2>Download Your File</h2>
-    <a class="download-btn" href="Outlaw_Truck_and_Trailer_skin.zip" download>Download Now</a>
+    <h2>Your File Is Ready</h2>
+    <a class="download-btn" href="Outlaw_Truck_and_Trailer_Skin.zip" download>
+        Download Now
+    </a>
 </div>
 
 <script>
@@ -60,19 +107,16 @@ a.download-btn {
 function generateDailyCode() {
     const today = new Date();
     const year = today.getFullYear();
-    const month = today.getMonth() + 1; // 1-12
-    const day = today.getDate(); // 1-31
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
 
-    // Create a unique daily code (example: 20260728 → 728)
     const rawCode = `${year}${month}${day}`;
 
-    // Convert to a 4-digit code by hashing the date
     let hash = 0;
     for (let i = 0; i < rawCode.length; i++) {
         hash = (hash * 31 + rawCode.charCodeAt(i)) % 10000;
     }
 
-    // Ensure it's always 4 digits
     return hash.toString().padStart(4, "0");
 }
 
@@ -93,7 +137,5 @@ function checkCode() {
 }
 </script>
 
-
 </body>
 </html>
-
