@@ -77,6 +77,77 @@
             margin-bottom: 10px;
             font-size: 24px;
         }
+
+        .shop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.shop-item {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 15px #ff1a1a;
+    transition: 0.25s;
+}
+
+.shop-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #ff1a1a;
+}
+
+.shop-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.shop-item h3 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.shop-item p {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.shop-item a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff1a1a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #ff1a1a;
+    transition: 0.2s;
+}
+
+.shop-item a:hover {
+    background: #cc0000;
+    box-shadow: 0 0 20px #ff1a1a;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+    .shop {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .shop {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
     </style>
 </head>
 
@@ -108,7 +179,20 @@
 
             <a href="https://www.paypal.com/ncp/payment/CQAP4KV32GDRU" class="paypal-btn">
                 Buy Now with PayPal
-
+        
+        <div class="shop-item">
+            <img src="images/placeholder1.png" alt="Coming Soon">
+            <h3>Coming Soon</h3>
+            <p>New custom mod dropping soon.</p>
+            <a href="#">Not Available</a>
+        </div>
+        
+        <div class="shop-item">
+            <img src="images/placeholder2.png" alt="Coming Soon">
+            <h3>Coming Soon</h3>
+            <p>More HellDesignCustoms mods on the way.</p>
+            <a href="#">Not Available</a>
+        </div>                
             </a>
 
         </div>
